@@ -54,8 +54,8 @@ unsigned int faStr2(const char *str) {
 
 unsigned int faStr3(const char *str) {
   bool inWord = false;
-  unsigned int count = 0;
-  unsigned int sumLenght = 0;
+  int count = 0;
+  int sumLenght = 0;
   int i = 0;
   while (str[i] != '\0') {
     if (!inWord && str[i] != ' ') {
@@ -69,7 +69,7 @@ unsigned int faStr3(const char *str) {
     }
     i++;
   }
-  return std::round(static_cast<double>(sumLenght) / static_cast<double>(count));
+  return std::round(static_cast<double>(sumLenght) / count);
 }
 
 bool isNum(char c) { return c >= '0' && c <= '9'; }
