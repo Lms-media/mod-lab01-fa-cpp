@@ -52,7 +52,25 @@ unsigned int faStr2(const char *str) {
   return count;
 }
 
-unsigned int faStr3(const char *str) { return 0; }
+unsigned int faStr3(const char *str) {
+  bool inWord = false;
+  unsigned int count = 0;
+  unsigned int sumLenght = 0;
+  int i = 0;
+  while (str[i] != '\0') {
+    if (!inWord && str[i] != ' ') {
+      inWord = true;
+      count++;
+      sumLenght++;
+    } else if (inWord && str[i] == ' ') {
+      inWord = false;
+    } else if (inWord && str[i] != ' ') {
+      sumLenght++;
+    }
+    i++;
+  }
+  return sumLenght / count;
+}
 
 bool isNum(char c) { return c >= '0' && c <= '9'; }
 
