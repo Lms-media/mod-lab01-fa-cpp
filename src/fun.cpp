@@ -69,7 +69,7 @@ unsigned int faStr3(const char *str) {
     }
     i++;
   }
-  return sumLenght / count;
+  return std::round((double)sumLenght / (double)count);
 }
 
 bool isNum(char c) { return c >= '0' && c <= '9'; }
